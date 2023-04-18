@@ -39,8 +39,22 @@
 </tr>
 </tbody></table>
 <p>OpenMv的板载感光元件为OV5640,其参数如下：</p>
-<p>| 支持的图像格式 | Grayscale<br><br/>RGB565</p>
-<p><br/>JPEG (and BAYER)                                                                                                                            |<br>| ——- | ———————————————————————————————————————————————————————- |<br>| 最大支持的像素 | Grayscale: 2952×1944 (5MP) and under<br><br/>RGB565: 2952×1944 (5MP) and under<br><br/>Grayscale JPEG: 2952×1944 (5MP) and under<br><br/>RGB565 JPEG: 2952×1944 (5MP) and under |<br>| 镜头信息    | 焦距: 2.8mm<br><br/>光圈: F2.0<br><br/>尺寸: 1&#x2F;3″<br><br/>HFOV &#x3D; 70.8°, VFOV &#x3D; 55.6°<br><br/>安装: M12*0.5<br><br/>                                                                           |</p>
+<table>
+<thead>
+<tr>
+<th>支持的图像格式</th>
+<th>Grayscale,RGB565,JPEG(and BAYER)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>最大支持的像素</td>
+<td>Grayscale:2952x1944(5MP)and under <br>  RGB565: 2952×1944 (5MP) and under<br>Grayscale JPEG: 2952×1944 (5MP) and under</td>
+</tr>
+<tr>
+<td>镜头信息</td>
+<td>焦距: 2.8mm<br> 光圈：F2.0<br> 尺寸：1&#x2F;3‘’<br> HFOV&#x3D;70.8°, VFOV &#x3D; 55.6°<br> 安装：M12*0.5</td>
+</tr>
+</tbody></table>
 <p>OpenMv内部带有一定的算法，能够在片上实现以下的几种功能：</p>
 <ul>
 <li><strong>Frame Differencing帧差分算法</strong><ul>
