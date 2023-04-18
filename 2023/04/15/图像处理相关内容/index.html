@@ -84,7 +84,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">1.6k</span>
+            <span class="post-count">1.2k</span>
         </span>
     </span>
 
@@ -93,7 +93,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">5 分钟</span>
+            <span class="post-count">4 分钟</span>
         </span>
     </span>
 </div>
@@ -163,75 +163,75 @@
 <p>OpenMv内部带有一定的算法，能够在片上实现以下的几种功能：</p>
 <ul>
 <li><strong>Frame Differencing帧差分算法</strong><ul>
-<li>你可以使用OpenMV Cam上的帧差分算法来查看场景中的运动情况。帧差分算法可以将OpenMV用于安全应用。</li>
+<li>使用OpenMV Cam上的帧差分算法来查看场景中的运动情况。帧差分算法可以将OpenMV应用在安全领域。</li>
 </ul>
 </li>
 <li><strong>Color Tracking颜色追踪</strong><ul>
-<li>你可以使用OpenMV在图像中同时检测多达16种颜色（实际上永远不会想要找到超过4种颜色），并且每种颜色都可以有任意数量的不同的色块。OpenMV会告诉您每个色块的位置，大小，中心和方向。使用颜色跟踪，您的OpenMV Cam可以进行编程，以跟踪太阳，线跟踪，目标跟踪等等。视频演示：<a target="_blank" rel="noopener" href="https://singtown.com/learn/49993/">OpenMV识别颜色 | 星瞳科技</a></li>
+<li>使用OpenMV在图像中同时检测多达16种颜色（实际使用不超过4种颜色），并且可以识别每种颜色的任意数量的不同色块。视频参考：<a target="_blank" rel="noopener" href="https://singtown.com/learn/49993/">OpenMV识别颜色 | 星瞳科技</a></li>
 </ul>
 </li>
 <li><strong>Marker Tracking标记跟踪</strong><ul>
-<li>您可以使用OpenMV Cam来检测颜色组的颜色，而不是单独的颜色。这允许你在对象上放置颜色标签（2种或多种颜色的标签），OpenMV会获取标签对象的内容。</li>
+<li>使用OpenMV Cam来检测色组的颜色，实现对象上放置颜色标签（2种或多种颜色的标签），OpenMV会获取标签对象的内容。</li>
 </ul>
 </li>
 <li><strong>Face Detection人脸检测</strong><ul>
-<li>你可以使用OpenMV Cam（或任何通用对象）检测脸。你的OpenMV摄像头可以处理Haar模板进行通用对象检测，并配有内置的Frontal Face 模板和Eye Haar模板来检测人脸和眼睛。<a target="_blank" rel="noopener" href="https://singtown.com/learn/50013/">OpenMV人脸识别 | 星瞳科技</a></li>
+<li>使用OpenMV Cam（或任何通用对象）检测人脸。OpenMV摄像头可以处理Haar算子进行通用对象检测，内置的Frontal Face 模板和Eye Haar模板可以检测人脸和眼睛。视频参考：<a target="_blank" rel="noopener" href="https://singtown.com/learn/50013/">OpenMV人脸识别 | 星瞳科技</a></li>
 </ul>
 </li>
 <li><strong>Eye Tracking眼动跟踪</strong><ul>
-<li>你可以使用眼动跟踪来检测某人的注视方向。你可以使用它来控制机器人。眼睛跟踪检测瞳孔的位置，同时检测图像中是否有眼睛。</li>
+<li>使用眼动跟踪来检测人的注视方向。可以用来控制机器人。眼睛跟踪检测瞳孔的位置，同时检测图像中是否有眼睛。</li>
 </ul>
 </li>
 <li><strong>Person Detection人检测</strong><ul>
-<li>你可以使用内置的人检测器(TensorFlow Lite模型)检测视野中是否有人。</li>
+<li>使用内置的人检测器(TensorFlow Lite模型)检测视野中是否有人。</li>
 </ul>
 </li>
 <li><strong>Optical Flow光流</strong><ul>
-<li>你可以使用光流来检测您的OpenMV摄像机面前的画面。例如，您可以使用四旋翼上的光流来控制在空中的稳定性。</li>
+<li>使用光流来检测OpenMV摄像机面前的画面。</li>
 </ul>
 </li>
 <li><strong>QR Code Detection&#x2F;Decoding二维码检测&#x2F;解码</strong><ul>
-<li>您可以使用OpenMV Cam在其视野中读取QR码。通过QR码检测&#x2F;解码，您可以使智能机器人能够读取环境中的标签。</li>
+<li>使用OpenMV Cam在其视野中读取QR码。通过QR码检测&#x2F;解码，使智能机器人读取环境中的标签。</li>
 </ul>
 </li>
 <li><strong>Data Matrix Detection&#x2F;Decoding矩阵码检测&#x2F;解码</strong><ul>
-<li>OpenMV Cam 也可以检测和解码矩阵码（2D条形码 Data Matrix）。您可以在此处查看我们的视频。</li>
+<li>OpenMV Cam 可以检测和解码矩阵码（2D条形码 Data Matrix）。</li>
 </ul>
 </li>
 <li><strong>Linear Barcode Decoding条形码</strong><ul>
-<li>OpenMV Cam 还可以处理1D条形码。它可以解码 EAN2, EAN5, EAN8, UPCE, ISBN10, UPCA, EAN13, ISBN13, I25, DATABAR, DARABAR_EXP, CODABAR, CODE39, CODE93, 和 CODE128。在此处查看我们的视频：<a target="_blank" rel="noopener" href="https://singtown.com/learn/50017/">OpenMV扫码识别 | 星瞳科技</a></li>
+<li>OpenMV Cam 可以处理1D条形码,解码 EAN2, EAN5, EAN8, UPCE, ISBN10, UPCA, EAN13, ISBN13, I25, DATABAR, DARABAR_EXP, CODABAR, CODE39, CODE93, 和 CODE128。视频参考：<a target="_blank" rel="noopener" href="https://singtown.com/learn/50017/">OpenMV扫码识别 | 星瞳科技</a></li>
 </ul>
 </li>
 <li><strong>AprilTag Tracking标记跟踪</strong><ul>
-<li>甚至比上面的QR码更好，OpenMV Cam 也可以追踪AprilTags。AprilTags是旋转不变，尺度不变，剪切不变和照明不变的最先进的基准标记。在此处查看我们的视频: <a target="_blank" rel="noopener" href="https://singtown.com/learn/49590/">OpenMV使用AprilTag标记追踪 | 星瞳科技</a></li>
+<li>OpenMV Cam 也可以追踪AprilTags。AprilTags是先进的基准标记。视频参考: <a target="_blank" rel="noopener" href="https://singtown.com/learn/49590/">OpenMV使用AprilTag标记追踪 | 星瞳科技</a></li>
 </ul>
 </li>
 <li><strong>Line Detection直线检测</strong><ul>
-<li>OpenMV Cam可以在几乎跑满帧率的情况下，快速完成无限长的直线检测。而且，也可以找到非无限长的线段。您可以在这里看到我们的视频：<a target="_blank" rel="noopener" href="https://singtown.com/learn/50009/">OpenMV形状识别 | 星瞳科技</a></li>
+<li>OpenMV Cam可以快速完成无限长的直线检测。可以找到非无限长的线段。视频参考：<a target="_blank" rel="noopener" href="https://singtown.com/learn/50009/">OpenMV形状识别 | 星瞳科技</a></li>
 </ul>
 </li>
 <li><strong>Circle Detection圆形检测</strong><ul>
-<li>你可以使用OpenMV很容易的检测图像中的圆形。</li>
+<li>使用OpenMV检测图像中的圆形。</li>
 </ul>
 </li>
 <li><strong>Rectangle Detection矩形检测</strong><ul>
-<li>OpenMV也可以检测矩形，它使用了AprilTag库中的方形检测代码。</li>
+<li>检测矩形，使用AprilTag库中的方形检测代码。</li>
 </ul>
 </li>
 <li><strong>Template Matching模板匹配</strong><ul>
-<li>您可以使用OpenMV模板匹配来检测视野中是否有模板相似的图片。例如，可以使用模板匹配来查找PCB上的标记，或读取显示器上的已知数字。</li>
+<li>使用模板匹配来检测视野中是否有模板相似的图片。例如，可以使用模板匹配来查找PCB上的标记，或读取显示器上的已知数字。</li>
 </ul>
 </li>
 <li><strong>Image Capture图像捕捉</strong><ul>
-<li>你可以使用OpenMV捕获RGB565&#x2F;灰度的 BMP &#x2F; JPG &#x2F; PPM &#x2F; PGM图像。可以直接在Python脚本中控制如何捕获图像。最重要的是，使用机器视觉的算法，进行绘制直线，绘制字符，然后保存。</li>
+<li>使用OpenMV捕获RGB565&#x2F;灰度的 BMP &#x2F; JPG &#x2F; PPM &#x2F; PGM图像。可以直接在Python脚本中控制捕获图像。</li>
 </ul>
 </li>
 <li><strong>Video Recording视频录制</strong><ul>
-<li>你可以使用OpenMV摄像机记录RGB565&#x2F;灰度的MJPEG视频或GIF图像（或者RAW视频）。你可以在Python脚本中直接控制如何将每个视频帧记录，并完全控制视频录制的开始和结束。而且，像拍摄图像一样，您可以使用机器视觉的算法，进行绘制直线，绘制字符，然后保存。</li>
+<li>使用OpenMV摄像机记录RGB565&#x2F;灰度的MJPEG视频或GIF图像（或者RAW视频）。</li>
 </ul>
 </li>
 <li><strong>TensorFlow Lite for Microcontrollers</strong><ul>
-<li>TensorFlow Lite支持使你可以在OpenMV Cam上运行自定义图像分类和分割模型。借助TensorFlow Lite，你可以轻松分类画面中复杂的区域，并根据所看到的内容控制I&#x2F;O引脚。</li>
+<li>TensorFlow Lite可以在OpenMV Cam上运行自定义图像分类和分割模型。借助TensorFlow Lite，轻松分类画面中复杂的区域，并根据所看到的内容控制I&#x2F;O引脚。</li>
 </ul>
 </li>
 </ul>
