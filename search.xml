@@ -131,5 +131,56 @@
 </li>
 </ul>
 ]]></content>
+      <tags>
+        <tag>基础知识</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>图像处理原理</title>
+    <url>/2023/04/19/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/</url>
+    <content><![CDATA[<h1 id="CMOS成像原理"><a href="#CMOS成像原理" class="headerlink" title="CMOS成像原理"></a>CMOS成像原理</h1><p>通过对OpenMv的认识，成像核心为CMOS传感器，为更好的理解图像识别的全过程，下面对CMOS的工作原理做初步的认知. </p>
+<h2 id="CMOS图像传感器典型外部组成"><a href="#CMOS图像传感器典型外部组成" class="headerlink" title="CMOS图像传感器典型外部组成"></a>CMOS图像传感器典型外部组成</h2><img title src="/2023/04/19/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/5.png" alt data-align="center">
+
+<p>  上图是一个典型的CMOS传感器结构示意图，Package的作用是将传感器的信号输出接口连接到PCB的平台垫（PADS)上，不同的传感器有多种不同的Package方法.如QFP(Quad Flat Package),BGA(Ball Grid Array Package).BGA(球栅阵列封装)是目前最常见的封装方法，该方法有更小的体积，更好的散热和电性能，但由于其触点的焊接难度较大，普通用户不具备DIY焊接的能力.</p>
+<p>  Wire Bonds(引线键合)将信号从芯片(Sensor Chip)传输到传感器背部的接触点上.</p>
+<p>  Cover Glass(盖玻片)在保护传感器的同时，也可允许使所需光线达到感光区域.搭配不同的LENS即可对特定的所需光纤进行处理.</p>
+<h2 id="CMOS图像传感器内部结构"><a href="#CMOS图像传感器内部结构" class="headerlink" title="CMOS图像传感器内部结构"></a>CMOS图像传感器内部结构</h2><p>  CMOS图像传感器是模拟电路和数字电路的集成，其内部构成可分为：感光区阵列，时序控制，模拟信号处理，模数转换等模块.下图是包含ISP的cmos 摄像头结构图：</p>
+<img title src="/2023/04/19/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/4.png" alt data-align="center">
+
+<p>功能概述如下：</p>
+<ul>
+<li><p>感官区阵列(像素阵列） ：完成光电转换，将光子转换为电子</p>
+</li>
+<li><p>时序控制：控制电信号的读出，信号传递</p>
+</li>
+<li><p>模拟信号处理：信号去噪等</p>
+<p>其中像素阵列占据整个芯片的大部分面积，由像素组成，对应计算机显示的图片的每一个像素，每个像素包括感光区以及读出电路，每个像素的信号经过模拟信号处理后，由ADC进行数模转换，输入到数字处理模块。</p>
+</li>
+</ul>
+<h2 id="识别色彩—Bayer阵列"><a href="#识别色彩—Bayer阵列" class="headerlink" title="识别色彩—Bayer阵列"></a>识别色彩—Bayer阵列</h2><p>  Bayer阵列是一系列流程的整合，该流程包括：感光元件，Bayer滤镜，色彩还原.</p>
+<p>该阵列可以对色彩进行识别,通过像素块上方的的彩色光滤片(CF)对光线中的RGB进行拆分后，形成RGB阵列.</p>
+<p>  不同的Sensor有不同的排列模式，下面是常见的布局：</p>
+<table>
+<thead>
+<tr>
+<th align="center">GBRG</th>
+<th>GRBG</th>
+<th align="center">RGGB</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><img src="/2023/04/19/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/1.png"></td>
+<td><img src="/2023/04/19/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/2.png"></td>
+<td align="center"><img src="/2023/04/19/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/3.png"></td>
+</tr>
+</tbody></table>
+<h2 id="成像和读出"><a href="#成像和读出" class="headerlink" title="成像和读出"></a>成像和读出</h2><p>Sensor的成像过程，经常用水桶接水进行类比描述，可以简单理解为一下过程：</p>
+<p>  现实中的光子，相当于雨水。每个像素点，相当于接水用的水桶。水桶接雨水的过程等同于像素点曝光的过程。当收集到合适数量的雨水后，由特定的工序统计水桶里的水量然后清空水桶，重新收集雨水。</p>
+<p>光信号在Sensor中的记录和读取高度类似于计算机内存的工作原理，Sensor使用一个行信号和一个列信号来选中一个存储单元(Pixel)被选择的存储单元会与放大器联通，将其中的电荷数转换为电压值，电压值输出到阵列以外，进行数据处理。</p>
+<p>电压信号经过ADC转换器后，以数字信号的模式输出，经过ISP的处理，最后经过外部数据接口协议如(MIPI)输出到外部处理设备(如ARM内核的芯片)。</p>
+]]></content>
+      <tags>
+        <tag>基础知识</tag>
+      </tags>
   </entry>
 </search>

@@ -15,7 +15,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>OpenMv总览 |  Nova&#39;Life</title>
+      <title>图像处理原理 |  Nova&#39;Life</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -57,7 +57,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-图像处理相关内容"
+  id="post-图像处理原理"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -68,7 +68,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  OpenMv总览
+  图像处理原理
 </h1>
  
 
@@ -76,15 +76,15 @@
     </header>
      
     <div class="article-meta">
-      <a href="/2023/04/15/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9/" class="article-date">
-  <time datetime="2023-04-15T03:38:40.000Z" itemprop="datePublished">2023-04-15</time>
+      <a href="/2023/04/19/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/" class="article-date">
+  <time datetime="2023-04-19T06:36:05.000Z" itemprop="datePublished">2023-04-19</time>
 </a>   
 <div class="word_count">
     <span class="post-time">
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">1.2k</span>
+            <span class="post-count">851</span>
         </span>
     </span>
 
@@ -93,7 +93,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">4 分钟</span>
+            <span class="post-count">2 分钟</span>
         </span>
     </span>
 </div>
@@ -108,133 +108,46 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="机械视觉"><a href="#机械视觉" class="headerlink" title="机械视觉"></a>机械视觉</h1><h2 id="机器视觉的的定义"><a href="#机器视觉的的定义" class="headerlink" title="机器视觉的的定义"></a>机器视觉的的定义</h2><p>  机械视觉（Machine vision）,根据维基百科对其的定义：”配备有感测视觉仪器（如自动对焦<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%9B%B8%E6%A9%9F" title="相机">相机</a>或<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%84%9F%E6%B8%AC%E5%99%A8" title="传感器">传感器</a>）的检测机器。”</p>
-<p>  根据这段描述，结合该词的英语描述，注重的是机器（Machine).使用相关的机器元器件，使用处理器来实现人的视觉功能，达到对三维世界的客观物件的识别。</p>
-<p>  用一句话概括：用机器完成对现实的图像处理。</p>
-<h2 id="机械视觉的感光元器件"><a href="#机械视觉的感光元器件" class="headerlink" title="机械视觉的感光元器件"></a>机械视觉的感光元器件</h2><p>  如同人需要眼睛来感知世界，机械视觉也需要一双眼睛—感光元器件。</p>
-<p>在数码摄像头的应用领域，常见的感光传感器有两种：CCD(ChargeCoupledDevice)和CMOS(ComplementaryMetalOxideSemiconductor).而CMOS由于其实现方法，相比CCD具有低成本，低功耗，响应速度快的优势，目前，市场上主流的摄像头均采用CMOS感光传感器。</p>
-<h1 id="OpenMv"><a href="#OpenMv" class="headerlink" title="OpenMv"></a>OpenMv</h1><p>OpenMv是一款带有图像处理功能的可编程摄像头模块，它是上述机器视觉的一种简单基础实现方式，可以实现简单的机械视觉应用，例如人脸检测，图形追踪，距离检测等。</p>
-<p>  其主要参数如下：</p>
-<table>
-<thead>
-<tr>
-<th>处理器</th>
-<th>STM32H7432</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>主频</td>
-<td>480MHZ</td>
-</tr>
-<tr>
-<td>RAM</td>
-<td>1M</td>
-</tr>
-<tr>
-<td>FLASH</td>
-<td>2M</td>
-</tr>
-<tr>
-<td>编程环境</td>
-<td>Micropython</td>
-</tr>
-<tr>
-<td>库</td>
-<td>openmv视觉库</td>
-</tr>
-</tbody></table>
-<p>OpenMv的板载感光元件为OV5640,其参数如下：</p>
-<table>
-<thead>
-<tr>
-<th>支持的图像格式</th>
-<th>Grayscale,RGB565,JPEG(and BAYER)</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>最大支持的像素</td>
-<td>Grayscale:2952x1944(5MP)and under <br>  RGB565: 2952×1944 (5MP) and under<br>Grayscale JPEG: 2952×1944 (5MP) and under</td>
-</tr>
-<tr>
-<td>镜头信息</td>
-<td>焦距: 2.8mm<br> 光圈：F2.0<br> 尺寸：1&#x2F;3‘’<br> HFOV&#x3D;70.8°, VFOV &#x3D; 55.6°<br> 安装：M12*0.5</td>
-</tr>
-</tbody></table>
-<p>OpenMv内部带有一定的算法，能够在片上实现以下的几种功能：</p>
+  <h1 id="CMOS成像原理"><a href="#CMOS成像原理" class="headerlink" title="CMOS成像原理"></a>CMOS成像原理</h1><p>通过对OpenMv的认识，成像核心为CMOS传感器，为更好的理解图像识别的全过程，下面对CMOS的工作原理做初步的认知. </p>
+<h2 id="CMOS图像传感器典型外部组成"><a href="#CMOS图像传感器典型外部组成" class="headerlink" title="CMOS图像传感器典型外部组成"></a>CMOS图像传感器典型外部组成</h2><img title src="/2023/04/19/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/5.png" alt data-align="center">
+
+<p>  上图是一个典型的CMOS传感器结构示意图，Package的作用是将传感器的信号输出接口连接到PCB的平台垫（PADS)上，不同的传感器有多种不同的Package方法.如QFP(Quad Flat Package),BGA(Ball Grid Array Package).BGA(球栅阵列封装)是目前最常见的封装方法，该方法有更小的体积，更好的散热和电性能，但由于其触点的焊接难度较大，普通用户不具备DIY焊接的能力.</p>
+<p>  Wire Bonds(引线键合)将信号从芯片(Sensor Chip)传输到传感器背部的接触点上.</p>
+<p>  Cover Glass(盖玻片)在保护传感器的同时，也可允许使所需光线达到感光区域.搭配不同的LENS即可对特定的所需光纤进行处理.</p>
+<h2 id="CMOS图像传感器内部结构"><a href="#CMOS图像传感器内部结构" class="headerlink" title="CMOS图像传感器内部结构"></a>CMOS图像传感器内部结构</h2><p>  CMOS图像传感器是模拟电路和数字电路的集成，其内部构成可分为：感光区阵列，时序控制，模拟信号处理，模数转换等模块.下图是包含ISP的cmos 摄像头结构图：</p>
+<img title src="/2023/04/19/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/4.png" alt data-align="center">
+
+<p>功能概述如下：</p>
 <ul>
-<li><strong>Frame Differencing帧差分算法</strong><ul>
-<li>使用OpenMV Cam上的帧差分算法来查看场景中的运动情况。帧差分算法可以将OpenMV应用在安全领域。</li>
-</ul>
+<li><p>感官区阵列(像素阵列） ：完成光电转换，将光子转换为电子</p>
 </li>
-<li><strong>Color Tracking颜色追踪</strong><ul>
-<li>使用OpenMV在图像中同时检测多达16种颜色（实际使用不超过4种颜色），并且可以识别每种颜色的任意数量的不同色块。视频参考：<a target="_blank" rel="noopener" href="https://singtown.com/learn/49993/">OpenMV识别颜色 | 星瞳科技</a></li>
-</ul>
+<li><p>时序控制：控制电信号的读出，信号传递</p>
 </li>
-<li><strong>Marker Tracking标记跟踪</strong><ul>
-<li>使用OpenMV Cam来检测色组的颜色，实现对象上放置颜色标签（2种或多种颜色的标签），OpenMV会获取标签对象的内容。</li>
-</ul>
-</li>
-<li><strong>Face Detection人脸检测</strong><ul>
-<li>使用OpenMV Cam（或任何通用对象）检测人脸。OpenMV摄像头可以处理Haar算子进行通用对象检测，内置的Frontal Face 模板和Eye Haar模板可以检测人脸和眼睛。视频参考：<a target="_blank" rel="noopener" href="https://singtown.com/learn/50013/">OpenMV人脸识别 | 星瞳科技</a></li>
-</ul>
-</li>
-<li><strong>Eye Tracking眼动跟踪</strong><ul>
-<li>使用眼动跟踪来检测人的注视方向。可以用来控制机器人。眼睛跟踪检测瞳孔的位置，同时检测图像中是否有眼睛。</li>
-</ul>
-</li>
-<li><strong>Person Detection人检测</strong><ul>
-<li>使用内置的人检测器(TensorFlow Lite模型)检测视野中是否有人。</li>
-</ul>
-</li>
-<li><strong>Optical Flow光流</strong><ul>
-<li>使用光流来检测OpenMV摄像机面前的画面。</li>
-</ul>
-</li>
-<li><strong>QR Code Detection&#x2F;Decoding二维码检测&#x2F;解码</strong><ul>
-<li>使用OpenMV Cam在其视野中读取QR码。通过QR码检测&#x2F;解码，使智能机器人读取环境中的标签。</li>
-</ul>
-</li>
-<li><strong>Data Matrix Detection&#x2F;Decoding矩阵码检测&#x2F;解码</strong><ul>
-<li>OpenMV Cam 可以检测和解码矩阵码（2D条形码 Data Matrix）。</li>
-</ul>
-</li>
-<li><strong>Linear Barcode Decoding条形码</strong><ul>
-<li>OpenMV Cam 可以处理1D条形码,解码 EAN2, EAN5, EAN8, UPCE, ISBN10, UPCA, EAN13, ISBN13, I25, DATABAR, DARABAR_EXP, CODABAR, CODE39, CODE93, 和 CODE128。视频参考：<a target="_blank" rel="noopener" href="https://singtown.com/learn/50017/">OpenMV扫码识别 | 星瞳科技</a></li>
-</ul>
-</li>
-<li><strong>AprilTag Tracking标记跟踪</strong><ul>
-<li>OpenMV Cam 也可以追踪AprilTags。AprilTags是先进的基准标记。视频参考: <a target="_blank" rel="noopener" href="https://singtown.com/learn/49590/">OpenMV使用AprilTag标记追踪 | 星瞳科技</a></li>
-</ul>
-</li>
-<li><strong>Line Detection直线检测</strong><ul>
-<li>OpenMV Cam可以快速完成无限长的直线检测。可以找到非无限长的线段。视频参考：<a target="_blank" rel="noopener" href="https://singtown.com/learn/50009/">OpenMV形状识别 | 星瞳科技</a></li>
-</ul>
-</li>
-<li><strong>Circle Detection圆形检测</strong><ul>
-<li>使用OpenMV检测图像中的圆形。</li>
-</ul>
-</li>
-<li><strong>Rectangle Detection矩形检测</strong><ul>
-<li>检测矩形，使用AprilTag库中的方形检测代码。</li>
-</ul>
-</li>
-<li><strong>Template Matching模板匹配</strong><ul>
-<li>使用模板匹配来检测视野中是否有模板相似的图片。例如，可以使用模板匹配来查找PCB上的标记，或读取显示器上的已知数字。</li>
-</ul>
-</li>
-<li><strong>Image Capture图像捕捉</strong><ul>
-<li>使用OpenMV捕获RGB565&#x2F;灰度的 BMP &#x2F; JPG &#x2F; PPM &#x2F; PGM图像。可以直接在Python脚本中控制捕获图像。</li>
-</ul>
-</li>
-<li><strong>Video Recording视频录制</strong><ul>
-<li>使用OpenMV摄像机记录RGB565&#x2F;灰度的MJPEG视频或GIF图像（或者RAW视频）。</li>
-</ul>
-</li>
-<li><strong>TensorFlow Lite for Microcontrollers</strong><ul>
-<li>TensorFlow Lite可以在OpenMV Cam上运行自定义图像分类和分割模型。借助TensorFlow Lite，轻松分类画面中复杂的区域，并根据所看到的内容控制I&#x2F;O引脚。</li>
-</ul>
+<li><p>模拟信号处理：信号去噪等</p>
+<p>其中像素阵列占据整个芯片的大部分面积，由像素组成，对应计算机显示的图片的每一个像素，每个像素包括感光区以及读出电路，每个像素的信号经过模拟信号处理后，由ADC进行数模转换，输入到数字处理模块。</p>
 </li>
 </ul>
+<h2 id="识别色彩—Bayer阵列"><a href="#识别色彩—Bayer阵列" class="headerlink" title="识别色彩—Bayer阵列"></a>识别色彩—Bayer阵列</h2><p>  Bayer阵列是一系列流程的整合，该流程包括：感光元件，Bayer滤镜，色彩还原.</p>
+<p>该阵列可以对色彩进行识别,通过像素块上方的的彩色光滤片(CF)对光线中的RGB进行拆分后，形成RGB阵列.</p>
+<p>  不同的Sensor有不同的排列模式，下面是常见的布局：</p>
+<table>
+<thead>
+<tr>
+<th align="center">GBRG</th>
+<th>GRBG</th>
+<th align="center">RGGB</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><img src="/2023/04/19/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/1.png"></td>
+<td><img src="/2023/04/19/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/2.png"></td>
+<td align="center"><img src="/2023/04/19/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/3.png"></td>
+</tr>
+</tbody></table>
+<h2 id="成像和读出"><a href="#成像和读出" class="headerlink" title="成像和读出"></a>成像和读出</h2><p>Sensor的成像过程，经常用水桶接水进行类比描述，可以简单理解为一下过程：</p>
+<p>  现实中的光子，相当于雨水。每个像素点，相当于接水用的水桶。水桶接雨水的过程等同于像素点曝光的过程。当收集到合适数量的雨水后，由特定的工序统计水桶里的水量然后清空水桶，重新收集雨水。</p>
+<p>光信号在Sensor中的记录和读取高度类似于计算机内存的工作原理，Sensor使用一个行信号和一个列信号来选中一个存储单元(Pixel)被选择的存储单元会与放大器联通，将其中的电荷数转换为电压值，电压值输出到阵列以外，进行数据处理。</p>
+<p>电压信号经过ADC转换器后，以数字信号的模式输出，经过ISP的处理，最后经过外部数据接口协议如(MIPI)输出到外部处理设备(如ARM内核的芯片)。</p>
  
       <!-- reward -->
       
@@ -287,7 +200,7 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2023/04/15/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2023/04/19/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -300,15 +213,11 @@
    
   <nav class="article-nav">
     
-      <a href="/2023/04/19/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            图像处理原理
-          
-        </div>
-      </a>
     
+      <a href="/2023/04/15/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">OpenMv总览</div>
+      </a>
     
   </nav>
 
