@@ -183,4 +183,54 @@
         <tag>基础知识</tag>
       </tags>
   </entry>
+  <entry>
+    <title>传感器数据传输</title>
+    <url>/2023/04/27/%E4%BC%A0%E6%84%9F%E5%99%A8%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93/</url>
+    <content><![CDATA[<h1 id="RBG565格式"><a href="#RBG565格式" class="headerlink" title="RBG565格式"></a>RBG565格式</h1><p>RBG565为常见的彩色图像输出格式，在该格式下，每个像素点的数据位2Byte，即16位，RBG为三色分量，将16位按三色进行分配，可得到RGB565的字节存储格式：</p>
+<table>
+<thead>
+<tr>
+<th>15</th>
+<th>14</th>
+<th>13</th>
+<th>12</th>
+<th>11</th>
+<th>10</th>
+<th>9</th>
+<th>8</th>
+<th>7</th>
+<th>6</th>
+<th>5</th>
+<th>4</th>
+<th>3</th>
+<th>2</th>
+<th>1</th>
+<th>0</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>R7</td>
+<td>R6</td>
+<td>R5</td>
+<td>R4</td>
+<td>R3</td>
+<td>G7</td>
+<td>G6</td>
+<td>G5</td>
+<td>G4</td>
+<td>G3</td>
+<td>G2</td>
+<td>B7</td>
+<td>B6</td>
+<td>B5</td>
+<td>B4</td>
+<td>B3</td>
+</tr>
+</tbody></table>
+<p>由储存格式可知，相比较与RGB888格式，RGB565由于在三色通道的低位都有不同程度的缺失，因此该格式下的图像有较明显的色彩偏差，会对图像产生精度的影响。</p>
+]]></content>
+      <tags>
+        <tag>数据传输</tag>
+      </tags>
+  </entry>
 </search>
